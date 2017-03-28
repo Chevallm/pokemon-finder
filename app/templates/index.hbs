@@ -1,0 +1,7 @@
+{{input value=filter }}
+<ul>
+{{#each filterlist.Pokedex.Pokemon as |pokemon|}}
+<li>{{pokemon.ID}} - {{pokemon.Nom}}</li>
+{{/each}}
+</ul>
+{{outlet}}
