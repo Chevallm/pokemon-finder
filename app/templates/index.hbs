@@ -1,7 +1,8 @@
 {{input value=filter }}
-<ul>
-{{#each filterlist.Pokedex.Pokemon as |pokemon|}}
-<li>{{pokemon.ID}} - {{pokemon.Nom}}</li>
+<ul class="collection">
+{{#each filterlist as |pokemon|}}
+<li {{action (mut pokemonselect) pokemon}}><p>{{pokemon.Nom}}</p><img src="https://img.pokemondb.net/artwork/{{pokemon.Nom_anglais}}.jpg"/></li>
 {{/each}}
 </ul>
+{{pokemon-detail pokemon=pokemonselect}}
 {{outlet}}
