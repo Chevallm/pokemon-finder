@@ -1,8 +1,71 @@
-{{input value=filter }}
-<ul class="collection">
-{{#each filterlist as |pokemon|}}
-<li {{action (mut pokemonselect) pokemon}}><p>{{pokemon.Nom}}</p><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/{{lowercase pokemon.Nom_anglais}}.gif" alt="{{pokemon.Nom_anglais}}"></li>
-{{/each}}
-</ul>
-{{pokemon-detail pokemon=pokemonselect}}
+
+<div class="row">
+  <form class="card white">
+    <div class="card-content">
+      <div class="row">
+        <div class="input-field col s10">
+          <i class="material-icons prefix">search</i>
+          {{input value=filter type="search" required="true" autofocus="true"}}
+          <label for="search">Votre recherche</label>
+        </div>
+        <div class="col s12 ">
+          <p>Par genre:</p>
+          <div>
+            <a href="#" class="btn flat white black-text">Normal</a>
+            <a href="#" class="btn red">Feu</a>
+            <a href="#" class="btn blue">Eau</a>
+            <a href="#" class="btn yellow black-text">Electrique</a>
+            <a href="#" class="btn green">Plante</a>
+            <a href="#" class="btn blue lighten-2">Glace</a>
+            <a href="#" class="btn orange darken-3">Combat</a>
+            <a href="#" class="btn purple">Poison</a>
+            <a href="#" class="btn brown lighten-2">Sol</a>
+            <a href="#" class="btn cyan lighten-5 black-text">Vol</a>
+            <a href="#" class="btn purple darken-2">Psy</a>
+            <a href="#" class="btn green darken-2">Insecte</a>
+            <a href="#" class="btn brown">Roche</a>
+            <a href="#" class="btn purple darken-4">Spectre</a>
+            <a href="#" class="btn deep-purple lighten-4 black-text">Dragon</a>
+          </div>
+        </div>
+        {{#if filter}}
+        <div class="col s12">
+          <p>Il y a {{filterlist.length}} résultat(s) pour la recherche "{{filter}}"</p>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="card-action">
+      <a href="#">Contact</a>
+      <a href="#">A propos</a>
+    </div>
+  </form>
+</div>
+<div class="row">
+  {{#each filterlist as |pokemon|}}
+  <a href='#'>
+    <div class="col s12 m6 l3">
+      <div class="card horizontal {{pokemon.Couleur}} hoverable">
+        <div class="card-image valign-wrapper">
+          <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/{{lowercase pokemon.Url}}.gif" alt="{{pokemon.Nom_anglais}}" class="responsive">
+        </div>
+        <div class="card-content">
+          <span class="card-title">{{pokemon.Nom}}</span>
+          <div class="row">
+            <p class="truncate">Nom anglais: {{pokemon.Nom_anglais}}</p>
+            <p>Type: <span class="type {{pokemon.Type}}">{{capitalize pokemon.Type}}</span> {{#if pokemon.Type_2}}<span class="type {{pokemon.Type_2}}">{{capitalize pokemon.Type_2}}</span>{{/if}}</p>
+            <p>Attaque: </p>
+            <p>Attaque spéciale: {{pokemon.Attaque_speciale}}</p>
+            <p>Défense: {{pokemon.Defense}}</p>
+            <p>Défense spéciale: {{pokemon.Defense_special}}</p>
+            <p>Vitesse: {{pokemon.Vitesse}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  {{/each}}
+</div>
+
+
 {{outlet}}

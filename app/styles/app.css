@@ -1,0 +1,57 @@
+.card-image img {
+  max-height: 5em;
+  padding: 0.5em;
+}
+
+.type {
+  border-radius: 10%;
+  border: 1px solid black;
+  padding: 0.2em;
+}
+
+.type.eau {
+  background-color: #2196f3;
+}
+.type.feu {
+  background-color: #f44336;
+}
+.type.electrique {
+  background-color: #ffeb3b;
+}
+.type.poison {
+  background-color: #9c27b0;
+}
+.type.psy {
+  background-color: #7b1fa2;
+}
+.type.glace {
+  background-color: #64b5f6;
+}
+.type.normal {
+  background-color: white;
+}
+.type.roche {
+  background-color: #795548;
+}
+.type.sol {
+  background-color: #a1887f;
+}
+.type.combat {
+  background-color: #ef6c00;
+}
+.type.spectre {
+  background-color: #4a148c;
+}
+.type.vol {
+  background-color: #e0f7fa;
+}
+.type.instect {
+  background-color: #388e3c;
+}
+.type.plante {
+  background-color: #4caf50;
+}
+
+a .card {
+  color: black;
+}

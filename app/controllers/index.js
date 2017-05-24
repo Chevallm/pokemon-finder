@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
       var lesPokemonsCorrespondants = [];
       var lesPokemons = this.get('model').Pokedex.Pokemon;
       lesPokemonsCorrespondants = lesPokemons.filter(pokemon => {
-        return (pokemon.Nom.toLowerCase().search(this.get('filter')) > -1); 
+        return (pokemon.Nom.toLowerCase().search(this.get('filter').toLowerCase()) > -1); 
       });
       return lesPokemonsCorrespondants;
     })
