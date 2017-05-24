@@ -2,6 +2,10 @@
 
 module.exports = function(environment) {
   var ENV = {
+    'ember-cli-string-helpers': {
+      only: ['lowercase'],
+      except: []
+    },
     modulePrefix: 'pokemon1st-gen-db',
     environment: environment,
     rootURL: '/',
